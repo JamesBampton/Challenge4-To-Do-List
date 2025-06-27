@@ -32,7 +32,7 @@ var homeArray = [
 
 //WORK To do list array
 var workArray = [
-{
+/* {
     task: "Delete all files",
 },
 
@@ -46,12 +46,12 @@ var workArray = [
 
  {
     task: "Send rude email to manager",
-},
+}, */
 ];
 
 //SOCIAL To do list array
 var socialArray = [
-{
+/* {
     task: "PIL gig 4th July",
 },
 
@@ -65,5 +65,5 @@ var socialArray = [
 
  {
     task: "Visit Brighton for eats",
-},
+}, */
 ];
