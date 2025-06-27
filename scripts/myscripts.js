@@ -2,13 +2,17 @@
 
 //Home To do list array
 var homeArray = [
+
+
+];
+
+/* var homeArray = [
 {
     task: "Ironing",
 },
 
  {
-    task: "Repair door",
-    
+    task: "Repair door", 
 },
 
  {
@@ -18,7 +22,13 @@ var homeArray = [
  {
     task: "Feed Lion",
 },
-];
+
+ {
+    task: "Tame Shrew",
+},
+
+
+]; */
 
 //WORK To do list array
 var workArray = [
@@ -57,46 +67,3 @@ var socialArray = [
     task: "Visit Brighton for eats",
 },
 ];
-
-
-
-homeTask(homeArray); //Pass the home array into the function
-
-workTask(workArray); //Pass the work array into the function
-
-socialTask(socialArray); //Pass the social array into the function
-
-
-function homeTask(homeArray){
-
-    for (let i of homeArray){
-        console.log(`TASK: ${i.task}`);
-    }
-}
-
-
-
-function workTask(homeArray){
-
-    for (let i of homeArray){
-        console.log(`TASK: ${i.task}`);
-    }
-}
-
-function socialTask(homeArray){
-
-    for (let i of homeArray){
-        console.log(`TASK: ${i.task}`);
-    }
-}
-
-
-
-
-
-
-
-
-
-/* for (var i = 0; i < theArray.length; i++) {
-  console.log(theArray[i]); */

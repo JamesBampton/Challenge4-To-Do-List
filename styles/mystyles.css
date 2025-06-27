@@ -1,0 +1,23 @@
+#homeList li {
+  font-size: large;
+  padding: 5px;
+}
+
+#workList li {
+  font-size: large;
+  padding: 5px;
+}
+
+#socialList li {
+  font-size: large;
+  padding: 5px;
+}
+
+#socialList li {
+  align-items: center;
+}
+
+#ul li input {
+  padding: 10px;
+  font-size: 16px;
+}
