@@ -16,34 +16,6 @@
 </head>
 
 <body>
-
-    <script>
-
-        // var arrayList = document.getElementById("homeArray");
-        /*
-                var homeArray = [
-                    {
-                        task: "Ironing",
-                    },
-        
-                    {
-                        task: "Repair door",
-                    },
-        
-                    {
-                        task: "Cut Grass",
-                    },
-        
-                    {
-                        task: "Feed Lion",
-                    },
-        
-                    {
-                        task: "Tame Shrew",
-                    },
-                ] */
-    </script>
-
     <header>
         <div class="container-fluid p-5 bg-primary text-white text-center">
             <h1>JAMES BAMPTON</h1>
@@ -153,9 +125,9 @@
                     <section class="services">
 
                         <form>
-                            <label for="task">Task:</label><br>
-                            <input type="text" id="task" name="task" value="Sleep"><br><br>
-                            <input onclick='onClickaddButtonW()' id="addButton" type="button" value="Submit">
+                            <label for="taskW">Task:</label><br>
+                            <input type="text" id="taskW" name="taskW" value="Sleep"><br><br>
+                            <input onclick='onClickaddButtonW()' id="addButtonW" type="button" value="Submit">
                         </form>
 
                         <p>Enter you task and submit</p>
@@ -184,9 +156,9 @@
                     <section class="services">
 
                         <form>
-                            <label for="task">Task:</label><br>
-                            <input type="text" id="task" name="task" value="Sleep"><br><br>
-                            <input onclick='onClickaddButtonS()' id="addButton" type="button" value="Submit">
+                            <label for="taskS">Task:</label><br>
+                            <input type="text" id="taskS" name="taskS" value="Sleep"><br><br>
+                            <input onclick='onClickaddButtonS()' id="addButtonS" type="button" value="Submit">
                         </form>
 
                         <p>Enter you task and submit</p>
@@ -201,9 +173,6 @@
             </div>
         </div>
     </div>
-
-
-
 
     <script>
         //Create the list of items from the array in the HOME to do list at document load
@@ -231,7 +200,7 @@
 
             workArray.forEach(item => {
                 const list = document.createElement("li")
-                list.textContent = item.task;
+                list.textContent = item.taskW;
                 parentDiv.appendChild(list);
             });
 
@@ -250,7 +219,7 @@
                 const checkbox = document.createElement('input'); // Create checkbox
                 checkbox.type = 'checkbox'; // Set type to checkbox
                 checkbox.value = item; // Set value to the item text */
-                list.textContent = item.task;
+                list.textContent = item.taskS;
                 parentDiv.appendChild(list);
                 list.appendChild(checkbox);
 
@@ -284,7 +253,8 @@
             document.getElementById("homeList").appendChild(listItem);
 
             // Clear the input for user convenience
-            inputField.value = "";
+
+            task.value = ""; // Clear the input field after adding the task
 
         }
 
@@ -293,26 +263,27 @@
         function onClickaddButtonW() {
 
             // 1. use document.getElementById to select the task input
-            var task = document.getElementById("task");
+            var taskW = document.getElementById("taskW");
 
-            // 2. use document.getElementById to select the addButton Button
-            var addButton = document.getElementById("addButtonW");
+            // 2. use document.getElementById to select the addButtonW Button
+            var addButtonw = document.getElementById("addButtonW");
 
             // 3. add an event listener to the searchButton that calls the search function when clicked
             //addButton.addEventListener("click", onClickaddButton);
 
             // 4
-            var input = task.value.trim()
-            var newTask = { task: input }; //New variable to hold new input object
-            homeArray.push(newTask); // Push new object to the array
+            var input = taskW.value.trim()
+            var newTaskW = { taskW: input }; //New variable to hold new input object
+            homeArray.push(newTaskW); // Push new object to the array
 
             // Create the new list item and append to the UI elelment
-            const listItem = document.createElement("li");
-            listItem.textContent = newTask.task;
-            document.getElementById("workList").appendChild(listItem);
+            const listItemW = document.createElement("li");
+            listItemW.textContent = newTaskW.taskW;
+            document.getElementById("workList").appendChild(listItemW);
 
             // Clear the input for user convenience
-            inputField.value = "";
+            input.taskW = "";
+            taskW.value = ""; // Clear the input field after adding the task
 
         }
 
@@ -321,26 +292,36 @@
         function onClickaddButtonS() {
 
             // 1. use document.getElementById to select the task input
-            var task = document.getElementById("task");
+            var taskS = document.getElementById("taskS");
 
-            // 2. use document.getElementById to select the addButton Button
-            var addButton = document.getElementById("addButtonS");
+            // 2. use document.getElementById to select the addButtonS Button
+            var addButtonS = document.getElementById("addButtonS");
 
             // 3. add an event listener to the searchButton that calls the search function when clicked
             //addButton.addEventListener("click", onClickaddButton);
 
             // 4
-            var input = task.value.trim()
-            var newTask = { task: input }; //New variable to hold new input object
+            var input = taskS.value.trim()
+            var newTask = { taskS: input }; //New variable to hold new input object
             homeArray.push(newTask); // Push new object to the array
 
             // Create the new list item and append to the UI elelment
             const listItem = document.createElement("li");
-            listItem.textContent = newTask.task;
+            listItem.textContent = newTask.taskS;
+
+            //Create Checkbox for each item
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.classList.add("form-check-input");
+
+            // Add new item
             document.getElementById("socialList").appendChild(listItem);
+            //Add checkbox
+            document.getElementById("socialList").appendChild(checkbox);
 
             // Clear the input for user convenience
-            inputField.value = "";
+            input.valueS = "";
+            taskS.value = ""; // Clear the input field after adding the task
 
         }
 
@@ -348,19 +329,19 @@
 
 
         //Fire up the Modals
-
+        //Home Modal
         document.getElementById('add').addEventListener('click', function () {
             const modalElement = document.getElementById('addModal');
             const modalInstance = new bootstrap.Modal(modalElement);
             modalInstance.show();
         });
-
+        //Work Modal
         document.getElementById('addW').addEventListener('click', function () {
             const modalElement = document.getElementById('addModalW');
             const modalInstance = new bootstrap.Modal(modalElement);
             modalInstance.show();
         });
-
+        //Social Modal
         document.getElementById('addS').addEventListener('click', function () {
             const modalElement = document.getElementById('addModalS');
             const modalInstance = new bootstrap.Modal(modalElement);
