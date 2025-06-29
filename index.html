@@ -174,7 +174,7 @@
         </div>
     </div>
 
-    <script>
+    <!--     <script>
         //Create the list of items from the array in the HOME to do list at document load
         document.addEventListener("DOMContentLoaded", () => {
             const parentDiv = document.getElementById("homeList");
@@ -206,9 +206,9 @@
 
         });
 
-    </script>
+    </script> -->
 
-    <script>
+    <!--     <script>
         //Create the list of items from the array in the SOCIAL to do list at document load
         document.addEventListener("DOMContentLoaded", () => {
             const parentDiv = document.getElementById("socialList");
@@ -227,38 +227,56 @@
 
         });
 
-    </script>
+    </script> -->
 
     <script>
 
+        //HOME LIST FUNCTION
         function onClickaddButton() {
 
-            // 1. use document.getElementById to select the task input
-            var task = document.getElementById("task");
+            // SET VARIABLES
+            var task = document.getElementById("task"); // 1. use document.getElementById to select the task input  
+            var addButton = document.getElementById("addButton");//
 
-            // 2. use document.getElementById to select the addButton Button
-            var addButton = document.getElementById("addButton");
 
-            // 3. add an event listener to the searchButton that calls the search function when clicked
-            //addButton.addEventListener("click", onClickaddButton);
-
-            // 4
+            // Creat a new array to hold the tasks
             var input = task.value.trim()
             var newTask = { task: input }; //New variable to hold new input object
             homeArray.push(newTask); // Push new object to the array
 
             // Create the new list item and append to the UI elelment
             const listItem = document.createElement("li");
-            listItem.textContent = newTask.task;
+            listItem.textContent = newTask.task; // Set the text content of the list item to the new task           
+
+            const checkbox = document.createElement('input'); // Create checkbox
+            checkbox.type = 'checkbox'; // Set type to checkbox
+            //checkbox.value = newTask.task; // Set value to the item text
+            checkbox.id = `task-${homeArray.length}`; // Set a unique ID for the checkbox
+
+            // Add new item
             document.getElementById("homeList").appendChild(listItem);
 
-            // Clear the input for user convenience
+            //Add checkbox
+            document.getElementById("homeList").appendChild(checkbox);
 
+            // Add class to the list ( needs to be done after the li element is created and appended)
+            const element = document.querySelector('#homeList li');
+            console.log(element);
+            element.classList.add('listClass'); // Add class to the list item
+            //document.getElementById("#homeList li").appendChild(element); ( not needed as already appended above)
+
+            // Clear the input value
             task.value = ""; // Clear the input field after adding the task
+
+            const myNodeList = document.getElementById("homeList").getElementsByTagName("li");
+            console.log(myNodeList);
+
 
         }
 
         //FUNCTION END 
+
+        //WORK LIST FUNCTION
 
         function onClickaddButtonW() {
 
@@ -279,9 +297,17 @@
             // Create the new list item and append to the UI elelment
             const listItemW = document.createElement("li");
             listItemW.textContent = newTaskW.taskW;
+
+            const checkbox = document.createElement('input'); // Create checkbox
+            checkbox.type = 'checkbox'; // Set type to checkbox
+
+            // Add new item
             document.getElementById("workList").appendChild(listItemW);
 
-            // Clear the input for user convenience
+            //Add checkbox
+            document.getElementById("workList").appendChild(checkbox);
+
+            // Clear the input value
             input.taskW = "";
             taskW.value = ""; // Clear the input field after adding the task
 
@@ -289,6 +315,7 @@
 
         //FUNCTION END 
 
+        //SOCIAL LIST FUNCTION
         function onClickaddButtonS() {
 
             // 1. use document.getElementById to select the task input
@@ -309,10 +336,8 @@
             const listItem = document.createElement("li");
             listItem.textContent = newTask.taskS;
 
-            //Create Checkbox for each item
-            const checkbox = document.createElement("input");
-            checkbox.type = "checkbox";
-            checkbox.classList.add("form-check-input");
+            const checkbox = document.createElement('input'); // Create checkbox
+            checkbox.type = 'checkbox'; // Set type to checkbox
 
             // Add new item
             document.getElementById("socialList").appendChild(listItem);
