@@ -21,3 +21,9 @@
   padding: 10px;
   font-size: 16px;
 }
+
+.checkbox-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
