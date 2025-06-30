@@ -27,3 +27,35 @@
   align-items: center;
   gap: 8px;
 }
+
+.card {
+  border: orange solid 1px;
+  margin: 5px;
+  min-height: 300px;
+  min-width: 200px;
+  align-items: baseline;
+}
+
+.card div {
+  border: rgb(233, 230, 224) solid 1px;
+  margin: 5px;
+  min-height: 30px;
+  min-width: 200px;
+  align-items: flex-end;
+}
+
+.col-sm-4 button {
+  width: 100px;
+  padding: 2px;
+  margin: 5px;
+}
+
+.flexytime {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: flex-end;
+  height: auto;
+  padding: 0.5rem;
+  border: 1px solid rgb(163, 157, 157);
+}
