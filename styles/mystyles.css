@@ -42,8 +42,8 @@
 }
 
 .col-sm-4 button {
-  width: 100px;
-  padding: 2px;
+  width: 70px;
+  padding: 1px;
   margin: 5px;
 }
 
@@ -53,16 +53,29 @@
 }
 
 .flexytime {
+  display: flex;
+  flex-wrap: wrap;
   height: auto;
   padding: 1px;
   border: 1px solid rgb(163, 157, 157);
   position: absolute;
   bottom: 1px;
-  left: 10%;
+  left: 21%;
 }
 
 .col-sm-4 {
   display: flex;
   padding: 2px;
   margin: 5px;
+}
+
+.card h3 {
+  justify-self: center;
+  align-self: center;
+}
+
+.row {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
